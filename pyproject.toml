@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "test-tasks"
+version = "0.1.0"
+description = ""
+authors = ["Yana Shurinova <yana.shurinova009@gmail.com>"]
+readme = "README.md"
+packages = [{include = "test_tasks"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+uvicorn = "^0.24.0.post1"
+fastapi = "^0.104.1"
+pydantic = "^2.5.2"
+datetime = "^5.3"
+aiohttp = "^3.9.1"
+aiokafka = "^0.9.0"
+python-multipart = "^0.0.6"
+confluent-kafka = "^2.3.0"
+aiojobs = "^1.2.1"
+sqlalchemy = "^2.0.23"
+asyncpg = "^0.29.0"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

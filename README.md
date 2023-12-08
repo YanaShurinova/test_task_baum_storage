@@ -4,6 +4,7 @@
   - БД - PostgreSQL;
   - Брокер сообщений - Apache Kafka;
   - Миграции - alembic;
+  - Работа с БД - sqlalchemy
   - Менеджер зависимостей - poetry.
 
 ## Описание эндпоинтов

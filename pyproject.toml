@@ -4,11 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Yana Shurinova <yana.shurinova009@gmail.com>"]
 readme = "README.md"
-packages = [{include = "test_tasks"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-uvicorn = "^0.24.0.post1"
+python = ">=3.10,<3.11"
+uvicorn = "^0.23.2"
 fastapi = "^0.104.1"
 pydantic = "^2.5.2"
 datetime = "^5.3"

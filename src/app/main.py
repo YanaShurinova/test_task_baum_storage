@@ -7,12 +7,11 @@ from typing import List
 import uvicorn
 from aiokafka import AIOKafkaConsumer, AIOKafkaProducer
 from confluent_kafka.admin import AdminClient, NewTopic
-from fastapi import FastAPI, UploadFile, status
+from fastapi import FastAPI, UploadFile
 
 from src.app.db.adaptor import DatabaseConnection
 from src.app.dto.get_response import GetResponse
 from src.app.dto.send_download_request import SendDownloadRequest
-from src.app.dto.send_download_response import SendDownloadResponse
 from src.app.repositories.transaction import TransactionRepository
 
 
@@ -57,7 +56,7 @@ def create_app():
         await producer.stop()
         await consumer.stop()
 
-    @app.put("/send_download_text")
+    @app.put("/texts")
     async def send_download_text(file: UploadFile):
         """Эндпоинт по загружке и отправки исходных данных в брокер построчно.
 
@@ -80,7 +79,7 @@ def create_app():
                         ))
                     #asyncio.sleep(3)
 
-    @app.get("/get_x_avg")
+    @app.get("/texts/avg")
     async def get_x_avg()-> List[GetResponse]:
         """Эндпоинт по получению списка из объектов: дата, название, среднее значение х в тексте.
 
